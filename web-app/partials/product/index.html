@@ -1,0 +1,22 @@
+<div class="panel-heading">
+    Product List
+</div>
+<div class="panel-body" ng-controller="ProductController">
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>SKU</th>
+            <th>Actions</th>
+        </tr>
+        <tr ng-repeat="product in products" >
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.sku}}</td>
+            <td><a onclick="editProduct(product.id)">Edit</a> | <a ng-click="deleteProduct(product.id)">Delete</a></td>
+        </tr>
+    </table>
+</div>
+<div class="footer">
+    <button type="button" ng-click="goto(/product/new)" class="btn btn-primary">New</button>
+</div>
