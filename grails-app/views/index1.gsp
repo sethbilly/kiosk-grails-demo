@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="KioskApp">
+<html lang="en">
 	<head>
 		<link rel="stylesheet" href="${resource(dir:'stylesheets', file:'bootstrap.min.css')}">
 		%{--<script src="${resource(dir: 'lib/angular', file: 'angular.js')}"></script>--}%
@@ -31,13 +31,7 @@
 				</div>
 			</div>
 		</nav>
-		<div class="container" >
-			<div class="panel panel-default">
-				<div ng-view>
 
-				</div>
-			</div>
-		</div>
 
 	%{--<r:layoutResources/>--}%
 	%{--<script src="${resource(dir: 'lib/jquery', file: 'jquery-1.11.3.js')}"></script>--}%
