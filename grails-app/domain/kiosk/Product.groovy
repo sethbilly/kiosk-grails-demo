@@ -2,7 +2,7 @@ package kiosk
 
 import grails.rest.Resource
 
-@Resource
+@Resource()
 class Product {
     String name
     String sku

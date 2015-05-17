@@ -1,23 +1,48 @@
-
 package kiosk
 
-import grails.transaction.Transactional
+import grails.converters.JSON
+import grails.rest.RestfulController
 
 import static org.springframework.http.HttpStatus.*
+import grails.transaction.Transactional
 
 @Transactional(readOnly = true)
-class ProductController {
+class ProductController{
 
-    static scaffold = true
-    //static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE", index: "GET"]
+//    static responseFormats = ['json', 'xml']
 //
-//    def index(Integer max) {
-//        params.max = Math.min(max ?: 10, 100)
-//        respond Product.list(params), model: [productInstanceCount: Product.count()]
+//    ProductController(){
+//        super(Product)
+//    }
+
+    def productService
+    //static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static  scaffold =  true
+
+//    @Override
+//    def index(){
+//        respond listAllResources(params), [includes: includeFields, excludes: ['class']]
+//    }
+
+//    def list(){
+//        List<Product> products = productService.list(params);
+//        render products as JSON
+//    }
+
+//    def index() {
+////        params.max = Math.min(max ?: 10, 100)
+//        List<Product> products = Product.list();
+//        respond products as JSON
+////        , model:[productInstanceCount: Product.count()]
 //    }
 //
 //    def show(Product productInstance) {
 //        respond productInstance
+//    }
+//
+//    def edit(){
+//        Product product = productService.get(params.id as long)
+//        render product as JSON
 //    }
 //
 //    def create() {
@@ -32,11 +57,11 @@ class ProductController {
 //        }
 //
 //        if (productInstance.hasErrors()) {
-//            respond productInstance.errors, view: 'create'
+//            respond productInstance.errors, view:'create'
 //            return
 //        }
 //
-//        productInstance.save flush: true
+//        productInstance.save flush:true
 //
 //        request.withFormat {
 //            form multipartForm {
@@ -48,7 +73,7 @@ class ProductController {
 //    }
 //
 //    def edit(Product productInstance) {
-//        respond productInstance
+//        respond productInstance as JSON
 //    }
 //
 //    @Transactional
@@ -59,18 +84,18 @@ class ProductController {
 //        }
 //
 //        if (productInstance.hasErrors()) {
-//            respond productInstance.errors, view: 'edit'
+//            respond productInstance.errors, view:'edit'
 //            return
 //        }
 //
-//        productInstance.save flush: true
+//        productInstance.save flush:true
 //
 //        request.withFormat {
 //            form multipartForm {
 //                flash.message = message(code: 'default.updated.message', args: [message(code: 'Product.label', default: 'Product'), productInstance.id])
 //                redirect productInstance
 //            }
-//            '*' { respond productInstance, [status: OK] }
+//            '*'{ respond productInstance, [status: OK] }
 //        }
 //    }
 //
@@ -82,14 +107,14 @@ class ProductController {
 //            return
 //        }
 //
-//        productInstance.delete flush: true
+//        productInstance.delete flush:true
 //
 //        request.withFormat {
 //            form multipartForm {
 //                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Product.label', default: 'Product'), productInstance.id])
-//                redirect action: "index", method: "GET"
+//                redirect action:"index", method:"GET"
 //            }
-//            '*' { render status: NO_CONTENT }
+//            '*'{ render status: NO_CONTENT }
 //        }
 //    }
 //
@@ -99,7 +124,10 @@ class ProductController {
 //                flash.message = message(code: 'default.not.found.message', args: [message(code: 'product.label', default: 'Product'), params.id])
 //                redirect action: "index", method: "GET"
 //            }
-//            '*' { render status: NOT_FOUND }
+//            '*'{ render status: NOT_FOUND }
 //        }
+//    }
+//    private getIncludeFields(){
+//        params.fields?.tokenizer(',')
 //    }
 }

@@ -70,8 +70,11 @@ grails.project.dependency.resolution = {
         //angular js resource plugin
         runtime ":resources:1.2.14"
 
+        //cross site origin plugin
+        compile ":cors:1.1.7"
+
         //use angular
-        compile: ":angularjs-resources:1.3.15"
+        //compile: ":angularjs-resources:1.3.15"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"

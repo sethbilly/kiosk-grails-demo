@@ -36,6 +36,17 @@ grails.mime.types = [ // the first one is the default format
 //grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/fonts/*', '/plugins/*']
 //grails.resources.adhoc.includes = ['/images/*', '/css/*', '/js/*', '/fonts/*', '/plugins/*']
 
+//cross site origin request for frontend angular
+cors.enabled=true
+cors.url.pattern = '/api/*'
+cors.headers=[
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Headers': 'origin, authorization, accept, content-type, x-requested-with',
+        'Access-Control-Allow-Methods': 'GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS',
+        'Access-Control-Max-Age': 3600
+]
+
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
 

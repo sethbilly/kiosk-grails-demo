@@ -4,9 +4,9 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/web-app" relative="/" />
-          <root url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.14/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/resources-1.2.14/web-app" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -30,6 +30,9 @@
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$MODULE_DIR$/target/work/plugins/cors-1.1.7">
+      <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/cors-1.1.7/src/java" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" isTestSource="false" />
@@ -66,6 +69,8 @@
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (kiosk-grailsPlugins)">
         <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/3.0.7.RELEASE/spring-security-web-3.0.7.RELEASE.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.0.7.RELEASE/spring-security-core-3.0.7.RELEASE.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/com/bertramlabs/plugins/asset-pipeline-core/2.1.1/asset-pipeline-core-2.1.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/javassist/javassist/3.17.1-GA/javassist-3.17.1-GA.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/grails/grails-datastore-gorm-plugin-support/3.1.4.RELEASE/grails-datastore-gorm-plugin-support-3.1.4.RELEASE.jar!/" />

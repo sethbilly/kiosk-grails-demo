@@ -3,28 +3,37 @@
  */
 
 'use strict';
-angular.module('KioskApp', [])
-    .controller('ProductController', function($scope, $location, $rootScope, Product){
 
-        var product = Product.get({id:$routeParams.id});
-        var $id  = product.id;
-        $scope.prod = new Product
-        $scope.products = function(producst){
-            $scope.products = Product.index();
-        }
+app.controller('ProductController', function ($scope, Product, $routeParams, $location){
 
-        $scope.editProduct = function(id){
-            Product.update({id:$id});
-        }
+    //Product.query(function(data){
+    //    $scope.products = data.products;
+    //});
+    //var product = Product.get({id:$routeParams.id}, function() {
+    //    var id = product.id;
+    //
+    //});
+    $scope.products = Product.query();
+    $scope.productData = {};
+    $scope.saveProduct = function(){
+        var product = new Product($scope.productData);
+        product.$save()
+        $location.path('/product');
+    }
+    $scope.editProduct = function(){
+        Product.query({id: $routeParams.id}).$promise.then(function(product){
+            $scope.product = product;
+        })
+    }
 
-        $scope.deleteProduct = function(id){
-            Product.delete({id:$id});
-        }
+    $scope.updateProduct = function(){
 
-        $scope.saveProduct = function(){
-            Product.save(prod);
-        }
-    })
-    .controller('CustomerController', function($scope, $location, $rootScope, CustomerService){
+    }
 
-    })
+
+
+});
+
+app.controller('CustomerController', ['$scope', '$routeParams', '$location', 'Customer', function($scope, $routeParams, $location, $rootScope, Customer){
+
+}]);

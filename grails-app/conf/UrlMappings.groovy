@@ -12,6 +12,6 @@ class UrlMappings {
         "500"(view:'/error')
         "/api/products"(resources: "product")
         "/api/persons"(resources: "person")
-        "/api/customer"(resources: "customer")
+        "/api/customers"(resources: "customer")
 	}
 }

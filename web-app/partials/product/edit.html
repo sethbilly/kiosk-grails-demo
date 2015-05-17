@@ -1,4 +1,4 @@
-<div class="panel-heading" >Product</div>
+<div class="panel-heading" ng-controller="ProductController">Edit Product</div>
 <div class="panel-body">
     <fieldset>
         <div class="form-horizontal">
@@ -24,8 +24,7 @@
     </fieldset>
 </div>
 <div class="footer">
-    <button type="submit" class="btn btn-primary btn-sm col-sm-10">
-        <strong ng-if="product.id == null">Save</strong>
-        <strong ng-if="product.id != null">Update</strong>
+    <button type="submit" class="btn btn-primary btn-sm btn-block">
+        <strong>Update</strong>
     </button>
 </div>
